@@ -24,7 +24,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);
 
-  const port = Number(process.env.PORT) || 3002;
+  const port = Number(process.env.PORT) || 4002;
   await app.listen(port);
 
   logger.logServiceStart('Appointment Service', port, `http://localhost:${port}/api/docs`);
