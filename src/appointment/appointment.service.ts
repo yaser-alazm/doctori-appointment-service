@@ -4,8 +4,10 @@ import {
   AppointmentStatus,
   Availability,
   CreateAppointmentDto,
+  CreateAvailabilityDto,
   DoctoriLogger,
   TimeSlot,
+  UpdateAvailabilityDto,
 } from '@doctori/shared';
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
@@ -302,7 +304,7 @@ export class AppointmentService {
   }
 
   // Availability Management Methods
-  async createAvailability(doctorId: number, availabilityData: any) {
+  async createAvailability(doctorId: number, availabilityData: CreateAvailabilityDto) {
     const availability = await this.prisma.availability.create({
       data: {
         ...availabilityData,
@@ -326,7 +328,7 @@ export class AppointmentService {
     });
   }
 
-  async updateAvailability(id: number, updateData: any) {
+  async updateAvailability(id: number, updateData: UpdateAvailabilityDto) {
     const availability = await this.prisma.availability.update({
       where: { id },
       data: updateData,
