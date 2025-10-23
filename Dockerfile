@@ -21,4 +21,4 @@ RUN npx prisma generate
 EXPOSE 4002
 
 # Start in development mode with hot reload
-CMD ["npm", "run", "start:dev"]
+CMD ["npm", "run", "start:with-db"]

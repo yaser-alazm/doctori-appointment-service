@@ -20,10 +20,12 @@
     "prisma:push": "npx prisma db push",
     "prisma:migrate": "npx prisma migrate dev",
     "prisma:studio": "npx prisma studio",
-    "prisma:seed": "npx ts-node prisma/seed.ts"
+    "prisma:seed": "npx ts-node prisma/seed.ts",
+    "seed": "npm run prisma:seed",
+    "start:with-db": "npx prisma db push --accept-data-loss && npm run seed && npm run start:dev"
   },
   "dependencies": {
-    "@doctori/shared": "^1.0.4",
+    "@doctori/shared": "^1.0.6",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^10.0.0",
